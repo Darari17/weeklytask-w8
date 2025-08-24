@@ -21,10 +21,10 @@ func NewUserManager() *UserManager {
 
 func (u *UserManager) AddUser(user *User) error {
 	if _, ok := u.users[user.ID]; ok {
-		return fmt.Errorf("User dengan ID %d sudah terdaftar", user.ID)
+		return fmt.Errorf("User dengan ID: %d sudah terdaftar", user.ID)
 	}
 	u.users[user.ID] = user
-	fmt.Println("Berhasil menambahkan user")
+	fmt.Printf("Berhasil menambahkan user dengan ID: %d dan Nama: %s\n", user.ID, user.Name)
 	return nil
 }
 
@@ -32,5 +32,5 @@ func (u *UserManager) GetUser(id int) (*User, error) {
 	if user, ok := u.users[id]; ok {
 		return user, nil
 	}
-	return nil, fmt.Errorf("User dengan ID %d tidak ditemukan", id)
+	return nil, fmt.Errorf("User dengan ID: %d tidak ditemukan", id)
 }
