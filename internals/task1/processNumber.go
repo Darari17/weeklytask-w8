@@ -22,8 +22,8 @@ func processNumber(numbers []int) ([]int, error) {
 
 	result := make([]int, 0)
 	if len(numbers) > 0 {
-		for num := range numbers {
-			result = append(result, numbers[num]*2)
+		for _, num := range numbers {
+			result = append(result, num*2)
 		}
 	}
 
@@ -32,13 +32,19 @@ func processNumber(numbers []int) ([]int, error) {
 
 func DisplayProcessNumber() {
 	// valid
-	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	a := []int{1, 2, 3, 4, 5, 6, 7}
 	resA, err := processNumber(a)
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println(resA)
+		fmt.Println("Value-value slice dikali 2:", resA)
 	}
+
+	total := 1
+	for _, v := range resA {
+		total *= v
+	}
+	fmt.Println("Total perkalian tiap value dalam slice:", total)
 
 	// error nil
 	var b []int
