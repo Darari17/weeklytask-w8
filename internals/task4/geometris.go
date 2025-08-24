@@ -14,7 +14,7 @@ func Kalkulator(shapes []Shape) (result float64) {
 }
 
 func DisplayGeometris() {
-	circle := Circle{JariJari: 7}
-	rectangle := Rectangle{Lebar: 5, Panjang: 10}
+	circle := Circle{JariJari: 10}
+	rectangle := Rectangle{Lebar: 10, Panjang: 20}
 	fmt.Printf("Total area: %.2f\n", Kalkulator([]Shape{&circle, &rectangle}))
 }
